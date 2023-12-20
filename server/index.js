@@ -9,6 +9,7 @@ import morgan from "morgan";
 
 /* CONFIGURATION */
 dotenv.config();
+const {MONGO_URL,PORT} = process.env
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -22,3 +23,20 @@ app.use(cors());
 
 
 /* MONGOOSE SETUP */
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    app.listen(PORT || 9000, () => console.log(`Server Port: ${PORT}`));
+
+    /* ONLY ADD DATA ONE TIME */
+    // AffiliateStat.insertMany(dataAffiliateStat);
+    // OverallStat.insertMany(dataOverallStat);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
+    // Transaction.insertMany(dataTransaction);
+    // User.insertMany(dataUser);
+  })
+  .catch((error) => console.log(`${error} did not connect`));
