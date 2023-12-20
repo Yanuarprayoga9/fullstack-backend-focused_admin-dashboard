@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "eslint": "^8.56.0",
     "husky": "^8.0.0"
   },
   "name": "mern-dashboard",
@@ -14,10 +15,9 @@
       "prettier --write",
       "eslint --fix"
     ]
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
-
 }
