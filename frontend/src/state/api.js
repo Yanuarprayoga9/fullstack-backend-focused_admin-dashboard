@@ -1,5 +1,5 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import { build } from 'vite'
+// import { build } from 'vite'
 
 export const api = createApi({
     baseQuery:fetchBaseQuery({baseUrl: "http://localhost:5001/"}),
@@ -10,3 +10,7 @@ export const api = createApi({
         })
     })
 })
+
+
+export const { useGetUserQuery } = api
+

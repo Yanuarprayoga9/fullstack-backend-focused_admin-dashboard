@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // ROUTES
-app.use('general/',generalRoutes)
+app.use('/general/',generalRoutes)
 // Data Import
 import User from "./models/User.js";
 import {

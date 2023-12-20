@@ -34,64 +34,65 @@ import FlexBetween from "./FlexBetween";
 
 const navItems = [
     {
-      text: "Dashboard",
-      icon: <HomeOutlined />,
+        text: "Dashboard",
+        icon: <HomeOutlined />,
     },
     {
-      text: "Client Facing",
-      icon: null,
+        text: "Client Facing",
+        icon: null,
     },
     {
-      text: "Products",
-      icon: <ShoppingCartOutlined />,
+        text: "Products",
+        icon: <ShoppingCartOutlined />,
     },
     {
-      text: "Customers",
-      icon: <Groups2Outlined />,
+        text: "Customers",
+        icon: <Groups2Outlined />,
     },
     {
-      text: "Transactions",
-      icon: <ReceiptLongOutlined />,
+        text: "Transactions",
+        icon: <ReceiptLongOutlined />,
     },
     {
-      text: "Geography",
-      icon: <PublicOutlined />,
+        text: "Geography",
+        icon: <PublicOutlined />,
     },
     {
-      text: "Sales",
-      icon: null,
+        text: "Sales",
+        icon: null,
     },
     {
-      text: "Overview",
-      icon: <PointOfSaleOutlined />,
+        text: "Overview",
+        icon: <PointOfSaleOutlined />,
     },
     {
-      text: "Daily",
-      icon: <TodayOutlined />,
+        text: "Daily",
+        icon: <TodayOutlined />,
     },
     {
-      text: "Monthly",
-      icon: <CalendarMonthOutlined />,
+        text: "Monthly",
+        icon: <CalendarMonthOutlined />,
     },
     {
-      text: "Breakdown",
-      icon: <PieChartOutlined />,
+        text: "Breakdown",
+        icon: <PieChartOutlined />,
     },
     {
-      text: "Management",
-      icon: null,
+        text: "Management",
+        icon: null,
     },
     {
-      text: "Admin",
-      icon: <AdminPanelSettingsOutlined />,
+        text: "Admin",
+        icon: <AdminPanelSettingsOutlined />,
     },
     {
-      text: "Performance",
-      icon: <TrendingUpOutlined />,
+        text: "Performance",
+        icon: <TrendingUpOutlined />,
     },
-  ];
+];
 
 const Sidebar = ({
+    user,
     drawerWidth,
     isSidebarOpen,
     setIsSidebarOpen,
@@ -125,8 +126,6 @@ const Sidebar = ({
                         },
                     }}
                 >
-
-
                     <Box width="100%">
                         <Box m="1.5rem 2rem 2rem 3rem">
                             <FlexBetween color={theme.palette.secondary.main}>
@@ -193,10 +192,46 @@ const Sidebar = ({
                             })}
                         </List>
                     </Box>
+                    <Box position="absolute" bottom="2rem">
+                        <Divider />
+                        <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+                            <Box
+                                component="img"
+                                alt="profile"
+                                src="https://tse1.mm.bing.net/th?id=OIP.8li1g3WASRlQCpV6X54VCQHaHa&pid=Api&P=0&h=180"
+                                height="40px"
+                                width="40px"
+                                borderRadius="50%"
+                                sx={{ objectFit: "cover" }}
+                            />
+                            <Box textAlign="left">
+                                <Typography
+                                    fontWeight="bold"
+                                    fontSize="0.9rem"
+                                    sx={{ color: theme.palette.secondary[100] }}
+                                >
+                                    {user.name}
+                                </Typography>
+                                <Typography
+                                    fontSize="0.8rem"
+                                    sx={{ color: theme.palette.secondary[200] }}
+                                >
+                                    {user.occupation}
+                                </Typography>
+                            </Box>
+                            <SettingsOutlined
+                                sx={{
+                                    color: theme.palette.secondary[300],
+                                    fontSize: "25px ",
+                                }}
+                            />
+                        </FlexBetween>
+                    </Box>
                 </Drawer>
             )}
 
         </Box>
+
 
     );
 };
