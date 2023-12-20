@@ -13,7 +13,7 @@ import { setMode } from "../state/index";
 import { useTheme } from "@emotion/react";
 import { AppBar, IconButton, Toolbar, InputBase } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({isSidebarOpen,setIsSidebarOpen}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         }}
       >
         <FlexBetween>
-          <IconButton onClick={() => console.log("open/close")}>
+          <IconButton onClick={() =>setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween

@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+import generalRoutes from "./routes/general.js";
 
 
 /* CONFIGURATION */
@@ -20,6 +21,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // ROUTES
+app.use('general/',generalRoutes)
+// Data Import
+import User from "./models/User.js";
+import {
+  dataUser,
+  // dataProduct,
+  // dataProductStat,
+  // dataTransaction,
+  // dataOverallStat,
+  // dataAffiliateStat,
+} from "./data/index.js";
 
 
 /* MONGOOSE SETUP */
