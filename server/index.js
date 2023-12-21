@@ -7,6 +7,9 @@ import helmet from "helmet";
 import morgan from "morgan";
 import generalRoutes from "./routes/general.js";
 import clientRoutes from "./routes/client.js";
+import managementRoutes from "./routes/management.js";
+import salesRoutes from "./routes/sales.js";
+
 
 
 /* CONFIGURATION */
@@ -24,8 +27,8 @@ app.use(cors());
 /* ROUTES */
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
-// app.use("/management", managementRoutes);
-// app.use("/sales", salesRoutes);
+app.use("/management", managementRoutes);
+app.use("/sales", salesRoutes);
 
 // Data Import
 import User from "./models/User.js";
