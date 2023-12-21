@@ -60,9 +60,13 @@ export const api = createApi({
 });
 
 export const {
-  useGetUserQuery,
-  useGetProductsQuery,
-  useGetCustomersQuery,
-  useGetTransactionsQuery,
-  useGetGeographyQuery,
-} = api;
+    useGetUserQuery,
+    useGetProductsQuery,
+    useGetCustomersQuery,
+    useGetTransactionsQuery,
+    useGetGeographyQuery,
+    useGetSalesQuery,
+    useGetAdminsQuery,
+    useGetUserPerformanceQuery,
+    useGetDashboardQuery,
+  } = api;
