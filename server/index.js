@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import generalRoutes from "./routes/general.js";
+import clientRoutes from "./routes/client.js";
 
 
 /* CONFIGURATION */
@@ -20,14 +21,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-// ROUTES
-app.use('/general/',generalRoutes)
+/* ROUTES */
+app.use("/client", clientRoutes);
+app.use("/general", generalRoutes);
+// app.use("/management", managementRoutes);
+// app.use("/sales", salesRoutes);
+
 // Data Import
 import User from "./models/User.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
 import {
   dataUser,
-  // dataProduct,
-  // dataProductStat,
+  dataProduct,
+  dataProductStat,
   // dataTransaction,
   // dataOverallStat,
   // dataAffiliateStat,
