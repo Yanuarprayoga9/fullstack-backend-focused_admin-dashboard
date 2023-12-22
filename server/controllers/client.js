@@ -42,7 +42,6 @@ export const getTransactions = async (req, res) => {
     // formatted sort should look like { userId: -1 }
     const generateSort = () => {
       const sortParsed = JSON.parse(sort);
-
       const sortFormatted = {
         [sortParsed.field]: (sortParsed.sort = "asc" ? 1 : -1),
       };
@@ -64,7 +63,6 @@ export const getTransactions = async (req, res) => {
     const total = await Transaction.countDocuments({
       name: { $regex: search, $options: "i" },
     });
-
     res.status(200).json({
       transactions,
       total,
